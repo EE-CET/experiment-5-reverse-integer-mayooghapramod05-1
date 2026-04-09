@@ -1,15 +1,18 @@
 import java.util.Scanner;
-public class HCF {
+
+public class ReverseInteger { 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNextInt()) {
+            int n = scanner.nextInt();
+            int reversed = 0;
+            while (n != 0) {
+                int digit = n % 10;
+                reversed = reversed * 10 + digit;
+                n /= 10;
+            }
+            System.out.println(reversed);
         }
-        System.out.println(a);
-        sc.close();
+        scanner.close();
     }
 }
